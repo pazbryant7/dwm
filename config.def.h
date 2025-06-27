@@ -22,6 +22,18 @@ static char *colors[][3] = {
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
+
+/* Autostart */
+static const char *const autostart[] = {
+		"sh", "-c", "slstatus", NULL,
+		"sh", "-c", "~/.fehbg &", NULL,
+		"sh", "-c", "xset s off -dpms &", NULL,
+		"sh", "-c", "pgrep -x \"dunst\" >/dev/null || dunst &", NULL,
+		"sh", "-c", "pgrep -x \"picom\" >/dev/null || picom &", NULL,
+		"sh", "-c", "pgrep -x \"greenclip\" >/dev/null || greenclip daemon &", NULL,
+    NULL
+};
+
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
