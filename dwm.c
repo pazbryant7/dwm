@@ -209,6 +209,7 @@ static void manage(Window w, XWindowAttributes *wa);
 static void mappingnotify(XEvent *e);
 static void maprequest(XEvent *e);
 static void monocle(Monitor *m);
+static void updatemonoclesymbol(Monitor *m);
 static void motionnotify(XEvent *e);
 static void movemouse(const Arg *arg);
 static Client *nexttagged(Client *c);
@@ -1025,6 +1026,10 @@ focus(Client *c)
 		XDeleteProperty(dpy, root, netatom[NetActiveWindow]);
 	}
 	selmon->sel = c;
+
+ if (selmon->lt[selmon->sellt]->arrange == monocle)
+    updatemonoclesymbol(selmon);
+
 	drawbars();
 }
 
@@ -1386,16 +1391,32 @@ maprequest(XEvent *e)
 }
 
 void
-monocle(Monitor *m)
+updatemonoclesymbol(Monitor *m)
 {
-	unsigned int n = 0;
+	unsigned int n = 0, current = 0;
 	Client *c;
 
-	for (c = m->clients; c; c = c->next)
-		if (ISVISIBLE(c))
+	for (c = m->clients; c; c = c->next) {
+		if (ISVISIBLE(c)) {
 			n++;
-	if (n > 0) /* override layout symbol */
+			if (c == m->sel)
+				current = n;
+		}
+	}
+
+	if (n > 0 && current > 0)
+		snprintf(m->ltsymbol, sizeof m->ltsymbol, "[%d/%d]", current, n);
+	else if (n > 0)
 		snprintf(m->ltsymbol, sizeof m->ltsymbol, "[%d]", n);
+}
+
+void
+monocle(Monitor *m)
+{
+	Client *c;
+
+	updatemonoclesymbol(m);
+
 	for (c = nexttiled(m->clients); c; c = nexttiled(c->next))
 		resize(c, m->wx, m->wy, m->ww - 2 * c->bw, m->wh - 2 * c->bw, 0);
 }
