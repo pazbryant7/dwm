@@ -223,5 +223,6 @@ static const Button buttons[] = {
 /* trigger signals using `xsetroot -name "fsignal:<signum>"` */
 static Signal signals[] = {
     /* signum       function        argument  */
+    {1, xrdb, {.v = 0}},
     {1, setlayout, {.v = 0}},
 };
