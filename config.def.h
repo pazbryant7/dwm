@@ -165,7 +165,7 @@ static const Key keys[] = {
 
     /* --- Utility Apps (Translation, Calc, Reader) --- */
     {MODKEY, XK_r, spawn, SHCMD("~/bin/wm/reader")},
-    {MODKEY, XK_v, spawn, SHCMD("~/bin/wm/calculator")},
+    {MODKEY, XK_o, spawn, SHCMD("~/bin/wm/calculator")},
     {MODKEY, XK_c, spawn, SHCMD("~/bin/wm/transl es:en")},
     {MODKEY | ShiftMask, XK_c, spawn, SHCMD("~/bin/wm/transl en:es")},
 
