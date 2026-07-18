@@ -152,10 +152,10 @@ static const Key keys[] = {
     {MODKEY | ShiftMask, XK_t, spawn, SHCMD("alacritty")},
 
     /* --- Web Browsers --- */
-    {MODKEY, XK_Return, spawn,
-     SHCMD("brave-origin --profile-directory='Personal'")},
     {MODKEY | ShiftMask, XK_Return, spawn,
      SHCMD("brave-origin --profile-directory='Work'")},
+    {MODKEY, XK_Return, spawn,
+     SHCMD("brave-origin --profile-directory='Personal'")},
 
     /* --- System & Desktop Tools --- */
     {MODKEY, XK_u, spawn, SHCMD("~/bin/wm/uitool")},
