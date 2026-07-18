@@ -107,7 +107,6 @@ static const Layout layouts[] = {
     {MODKEY, KEY, view, {.ui = 1 << TAG}},                                     \
         {MODKEY | ControlMask, KEY, toggleview, {.ui = 1 << TAG}},             \
         {MODKEY | ShiftMask, KEY, tag, {.ui = 1 << TAG}},                      \
-        {MODKEY | ControlMask | ShiftMask, KEY, toggletag, {.ui = 1 << TAG}},
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd)                                                             \
@@ -135,24 +134,11 @@ static const Key keys[] = {
 
     /* --- Layouts & Master Stack Control --- */
     {MODKEY, XK_backslash, setlayout, {0}},
-    {MODKEY | Mod1Mask, XK_i, incnmaster, {.i = +1}},
-    {MODKEY | Mod1Mask, XK_d, incnmaster, {.i = -1}},
 
     /* --- Tag & Workspace Navigation (Views) --- */
     {MODKEY, XK_Left, viewtoleft, {0}},
     {MODKEY, XK_Right, viewtoright, {0}},
     {MODKEY, XK_Escape, view, {0}},
-
-    /* --- Moving Windows Between Tags --- */
-    {MODKEY | ShiftMask, XK_i, tag, {.ui = ~0}},
-    {MODKEY | ShiftMask, XK_Left, tagtoleft, {0}},
-    {MODKEY | ShiftMask, XK_Right, tagtoright, {0}},
-
-    /* --- Monitor Focus & Control --- */
-    {MODKEY, XK_comma, focusmon, {.i = -1}},
-    {MODKEY, XK_period, focusmon, {.i = +1}},
-    {MODKEY | ShiftMask, XK_comma, tagmon, {.i = -1}},
-    {MODKEY | ShiftMask, XK_period, tagmon, {.i = +1}},
 
     /* --- UI & Bar --- */
     {MODKEY | ShiftMask, XK_w, togglebar, {0}},
