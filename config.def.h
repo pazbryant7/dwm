@@ -33,7 +33,28 @@ static char *colors[][3] = {
 };
 
 static const char *const autostart[] = {
-    "st", NULL, NULL /* terminate */
+    "mpd",
+    NULL,
+    "dunst",
+    NULL,
+    "picom",
+    NULL,
+    "pipewire",
+    NULL,
+    "slstatus",
+    NULL,
+    "wireplumber",
+    NULL,
+    "pipewire-pulse",
+    NULL,
+    "/home/bryant/.fehbg",
+    NULL,
+    "xset",
+    "s",
+    "off",
+    "-dpms",
+    NULL,
+    NULL /* terminate array */
 };
 
 /* tagging */
