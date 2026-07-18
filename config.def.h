@@ -66,8 +66,17 @@ static const Rule rules[] = {
      *	WM_NAME(STRING) = title
      */
     /* class      instance    title       tags mask     isfloating   monitor */
-    {"Gimp", NULL, NULL, 0, 1, -1},
-    {"Firefox", NULL, NULL, 1 << 8, 0, -1},
+    {"feh", NULL, NULL, 0, 1, -1},
+    {"Nsxiv", NULL, NULL, 0, 1, -1},
+    {"ffplay", NULL, NULL, 0, 1, -1},
+    {"mpv", NULL, NULL, 1 << 6, -1, -1},
+    {"steam", NULL, NULL, 1 << 7, 0, -1},
+    {"Zathura", NULL, NULL, 1 << 6, 0, -1},
+    {"calibre", NULL, NULL, 1 << 4, 0, -1},
+    {"qBittorrent", NULL, NULL, 1 << 5, 0, -1},
+    {"st-256color", NULL, "ncmpcpp", 0, -1, -1},
+    {"st-256color", NULL, "bitwarden", 0, -1, -1},
+    {"st-256color", NULL, "Calculator", 0, -1, -1},
 };
 
 /* layout(s) */
