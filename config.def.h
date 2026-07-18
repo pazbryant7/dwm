@@ -121,6 +121,7 @@ static const Key keys[] = {
     {MODKEY | Mod1Mask, XK_e, quit, {0}},
 
     /* --- Window Focus & Manipulation --- */
+    {MODKEY, XK_f, togglefullscr, {0}},
     {MODKEY, XK_h, focusstack, {.i = -1}},
     {MODKEY, XK_l, focusstack, {.i = +1}},
 
