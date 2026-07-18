@@ -97,7 +97,6 @@ static const Layout layouts[] = {
     /* symbol     arrange function */
     {"[\\]", dwindle},
     {"[M]", monocle},
-    {"[]=", tile},
     {"><>", NULL}, /* no layout function means floating behavior */
 };
 
