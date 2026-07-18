@@ -205,5 +205,4 @@ static const Button buttons[] = {
 static Signal signals[] = {
     /* signum       function        argument  */
     {1, xrdb, {.v = 0}},
-    {1, setlayout, {.v = 0}},
 };
