@@ -17,9 +17,8 @@ static const int showsystray = 1; /* 0 means no systray */
 static const int showbar = 1;     /* 0 means no bar */
 static const int topbar = 0;      /* 0 means bottom bar */
 static const char *fonts[] = {
-    "National Park "
-    "SemiBold:size=10.5:weight=SemiBold:antialias=true:autohint=true",
-    "Noto Color Emoji:pixelsize=10:antialias=true:autohint=true",
+    "Annotation Mono:pixelsize=15:style:DemiBold:antialias=true:autohint=true",
+    "Noto Color Emoji:pixelsize=15:antialias=true:autohint=true",
 };
 static char normbgcolor[] = "#222222";
 static char normbordercolor[] = "#444444";
