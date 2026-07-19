@@ -134,8 +134,9 @@ static const Key keys[] = {
     {MODKEY, XK_backslash, setlayout, {0}},
 
     /* --- Tag & Workspace Navigation (Views) --- */
-    {MODKEY, XK_p, viewtoleft, {0}},
-    {MODKEY, XK_n, viewtoright, {0}},
+    {MODKEY, XK_n, viewnext, {0}},
+    {MODKEY, XK_p, viewprev, {0}},
+
     {MODKEY, XK_Escape, view, {0}},
 
     /* --- UI & Bar --- */

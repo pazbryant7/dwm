@@ -231,6 +231,8 @@ static void motionnotify(XEvent *e);
 static void movemouse(const Arg *arg);
 static Client *nexttiled(Client *c);
 static void pop(Client *c);
+static unsigned int nexttag(void);
+static unsigned int prevtag(void);
 static void propertynotify(XEvent *e);
 static void quit(const Arg *arg);
 static Monitor *recttomon(int x, int y, int w, int h);
@@ -279,6 +281,8 @@ static void updatewmhints(Client *c);
 static void view(const Arg *arg);
 static void viewtoleft(const Arg *arg);
 static void viewtoright(const Arg *arg);
+static void viewnext(const Arg *arg);
+static void viewprev(const Arg *arg);
 static Client *wintoclient(Window w);
 static Monitor *wintomon(Window w);
 static Client *wintosystrayicon(Window w);
@@ -1559,6 +1563,29 @@ movemouse(const Arg *arg)
 	}
 }
 
+unsigned int
+nexttag(void)
+{
+	unsigned int seltag = selmon->tagset[selmon->seltags];
+	unsigned int usedtags = 0;
+	Client *c = selmon->clients;
+
+	if (!c)
+		return seltag;
+
+	/* skip vacant tags */
+	do {
+		usedtags |= c->tags;
+		c = c->next;
+	} while (c);
+
+	do {
+		seltag = seltag == (1 << (LENGTH(tags) - 1)) ? 1 : seltag << 1;
+	} while (!(seltag & usedtags));
+
+	return seltag;
+}
+
 Client *
 nexttiled(Client *c)
 {
@@ -1573,6 +1600,28 @@ pop(Client *c)
 	attach(c);
 	focus(c);
 	arrange(c->mon);
+}
+
+unsigned int
+prevtag(void)
+{
+	unsigned int seltag = selmon->tagset[selmon->seltags];
+	unsigned int usedtags = 0;
+	Client *c = selmon->clients;
+	if (!c)
+		return seltag;
+
+	/* skip vacant tags */
+	do {
+		usedtags |= c->tags;
+		c = c->next;
+	} while (c);
+
+	do {
+		seltag = seltag == 1 ? (1 << (LENGTH(tags) - 1)) : seltag >> 1;
+	} while (!(seltag & usedtags));
+
+	return seltag;
 }
 
 void
@@ -2626,6 +2675,11 @@ viewtoleft(const Arg *arg) {
 }
 
 void
+viewnext(const Arg *arg){
+	view(&(const Arg){.ui = nexttag()});
+}
+
+void
 viewtoright(const Arg *arg) {
 	if(__builtin_popcount(selmon->tagset[selmon->seltags] & TAGMASK) == 1
 	&& selmon->tagset[selmon->seltags] & (TAGMASK >> 1)) {
@@ -2634,6 +2688,11 @@ viewtoright(const Arg *arg) {
 		focus(NULL);
 		arrange(selmon);
 	}
+}
+
+void
+viewprev(const Arg *arg){
+	view(&(const Arg){.ui = prevtag()});
 }
 
 Client *
