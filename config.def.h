@@ -110,9 +110,6 @@ static const Layout layouts[] = {
         .v = (const char *[]) { "/bin/sh", "-c", cmd, NULL }                   \
     }
 
-/* commands */
-static const char *termcmd[] = {"st", NULL};
-
 static const Key keys[] = {
     /* --- WM Control & Session --- */
     {MODKEY, XK_q, killclient, {0}},
