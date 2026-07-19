@@ -159,6 +159,7 @@ static const Key keys[] = {
     {MODKEY, XK_u, spawn, SHCMD("~/bin/wm/uitool")},
     {MODKEY, XK_a, spawn, SHCMD("~/bin/wm/bw-menu")},
     {MODKEY, XK_b, spawn, SHCMD("~/bin/wm/set-brightness")},
+    {MODKEY, XK_i, spawn, SHCMD("~/bin/wm/select-background")},
     {MODKEY | ShiftMask, XK_b, spawn, SHCMD("~/bin/wm/warmth")},
     {MODKEY, XK_space, spawn, SHCMD("~/bin/wm/switch-keyboard")},
 
