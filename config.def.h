@@ -162,6 +162,7 @@ static const Key keys[] = {
     {MODKEY, XK_i, spawn, SHCMD("~/bin/wm/select-background")},
     {MODKEY | ShiftMask, XK_b, spawn, SHCMD("~/bin/wm/warmth")},
     {MODKEY, XK_space, spawn, SHCMD("~/bin/wm/switch-keyboard")},
+    {MODKEY | ShiftMask, XK_space, spawn, SHCMD("~/bin/wm/switch-keyboard 'x'")},
 
     /* --- Utility Apps (Translation, Calc, Reader) --- */
     {MODKEY, XK_r, spawn, SHCMD("~/bin/wm/reader")},
