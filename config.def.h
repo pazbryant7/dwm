@@ -74,11 +74,12 @@ static const Rule rules[] = {
     {"ffplay", NULL, NULL, 0, 1, -1},
     {"mpv", NULL, NULL, 1 << 6, -1, -1},
     {"steam", NULL, NULL, 1 << 7, 0, -1},
-    {"Zathura", NULL, NULL, 1 << 6, 0, -1},
     {"calibre", NULL, NULL, 1 << 4, 0, -1},
+    {"Zathura", NULL, NULL, 1 << 6, 0, -1},
     {"qBittorrent", NULL, NULL, 1 << 5, 0, -1},
     {"st-256color", NULL, "ncmpcpp", 0, -1, -1},
-    {"st-256color", NULL, "bitwarden", 0, -1, -1},
+    {"st-256color", NULL, "bitwarden", 0, 0, -1},
+    {"st-256color", NULL, "translate", 0, -1, -1},
     {"st-256color", NULL, "Calculator", 0, -1, -1},
 };
 
