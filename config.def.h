@@ -141,7 +141,6 @@ static const Key keys[] = {
 
     /* --- UI & Bar --- */
     {MODKEY | ShiftMask, XK_w, togglebar, {0}},
-    {MODKEY, XK_F5, xrdb, {.v = NULL}},
 
     /* --- System Core & App Launchers --- */
     {MODKEY, XK_t, spawn, SHCMD("st")},
