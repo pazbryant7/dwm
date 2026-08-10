@@ -142,7 +142,6 @@ static const Key keys[] = {
     /* --- System Core & App Launchers --- */
     {MODKEY, XK_t, spawn, SHCMD("st")},
     {MODKEY, XK_e, spawn, SHCMD("st -e lf")},
-    {MODKEY, XK_s, spawn, SHCMD("~/bin/wm/sk")},
     {MODKEY, XK_d, spawn, SHCMD("rofi -show run")},
     {MODKEY | ShiftMask, XK_t, spawn, SHCMD("alacritty")},
 
@@ -153,8 +152,10 @@ static const Key keys[] = {
      SHCMD("brave-origin --profile-directory='Personal'")},
 
     /* --- System & Desktop Tools --- */
+    {MODKEY, XK_s, spawn, SHCMD("~/bin/wm/sk")},
     {MODKEY, XK_u, spawn, SHCMD("~/bin/wm/uitool")},
     {MODKEY, XK_a, spawn, SHCMD("~/bin/wm/bw-menu")},
+    {MODKEY, XK_y, spawn, SHCMD("~/bin/wm/goplay-rofi")},
     {MODKEY, XK_b, spawn, SHCMD("~/bin/wm/set-brightness")},
     {MODKEY, XK_i, spawn, SHCMD("~/bin/wm/select-background")},
     {MODKEY | ShiftMask, XK_b, spawn, SHCMD("~/bin/wm/warmth")},
