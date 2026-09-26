@@ -121,11 +121,9 @@ static const Key keys[] = {
     {MODKEY, XK_h, focusstack, {.i = -1}},
     {MODKEY, XK_l, focusstack, {.i = +1}},
 
+    {MODKEY | ShiftMask, XK_f, togglefloating, {0}},
     {MODKEY | Mod1Mask, XK_h, setmfact, {.f = -0.05}},
     {MODKEY | Mod1Mask, XK_l, setmfact, {.f = +0.05}},
-
-    {MODKEY, XK_Tab, zoom, {0}},
-    {MODKEY, XK_w, togglefloating, {0}},
 
     /* --- Layouts & Master Stack Control --- */
     {MODKEY, XK_backslash, setlayout, {0}},
@@ -134,16 +132,17 @@ static const Key keys[] = {
     {MODKEY, XK_n, viewnext, {0}},
     {MODKEY, XK_p, viewprev, {0}},
 
+    {MODKEY, XK_Tab, zoom, {0}},
     {MODKEY, XK_Escape, view, {0}},
 
     /* --- UI & Bar --- */
     {MODKEY | ShiftMask, XK_w, togglebar, {0}},
 
     /* --- System Core & App Launchers --- */
-    {MODKEY, XK_t, spawn, SHCMD("st")},
+    {MODKEY, XK_s, spawn, SHCMD("st")},
     {MODKEY, XK_e, spawn, SHCMD("st -e lf")},
     {MODKEY, XK_d, spawn, SHCMD("rofi -show run")},
-    {MODKEY | ShiftMask, XK_t, spawn, SHCMD("alacritty")},
+    {MODKEY | ShiftMask, XK_s, spawn, SHCMD("alacritty")},
 
     /* --- Web Browsers --- */
     {MODKEY | ShiftMask, XK_Return, spawn,
@@ -152,21 +151,21 @@ static const Key keys[] = {
      SHCMD("brave-origin --profile-directory='Personal'")},
 
     /* --- System & Desktop Tools --- */
-    {MODKEY, XK_s, spawn, SHCMD("~/bin/wm/sk")},
+    {MODKEY, XK_k, spawn, SHCMD("~/bin/wm/sk")},
     {MODKEY, XK_u, spawn, SHCMD("~/bin/wm/uitool")},
     {MODKEY, XK_a, spawn, SHCMD("~/bin/wm/bw-menu")},
     {MODKEY, XK_y, spawn, SHCMD("~/bin/wm/goplay-rofi")},
     {MODKEY, XK_b, spawn, SHCMD("~/bin/wm/set-brightness")},
-    {MODKEY, XK_i, spawn, SHCMD("~/bin/wm/select-background")},
+    {MODKEY, XK_w, spawn, SHCMD("~/bin/wm/select-background")},
     {MODKEY | ShiftMask, XK_b, spawn, SHCMD("~/bin/wm/warmth")},
     {MODKEY, XK_space, spawn, SHCMD("~/bin/wm/switch-keyboard")},
     {MODKEY | ShiftMask, XK_space, spawn, SHCMD("~/bin/wm/switch-keyboard 'x'")},
 
     /* --- Utility Apps (Translation, Calc, Reader) --- */
     {MODKEY, XK_r, spawn, SHCMD("~/bin/wm/reader")},
-    {MODKEY, XK_o, spawn, SHCMD("~/bin/wm/calculator")},
-    {MODKEY, XK_c, spawn, SHCMD("~/bin/wm/transl es:en")},
-    {MODKEY | ShiftMask, XK_c, spawn, SHCMD("~/bin/wm/transl en:es")},
+    {MODKEY, XK_c, spawn, SHCMD("~/bin/wm/calculator")},
+    {MODKEY, XK_t, spawn, SHCMD("~/bin/wm/transl es:en")},
+    {MODKEY | ShiftMask, XK_t, spawn, SHCMD("~/bin/wm/transl en:es")},
 
     /* --- Media & Recording --- */
     {MODKEY, XK_m, spawn, SHCMD("st -t ncmpcpp -e ncmpcpp")},
